@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase){
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+// o for(), em que a inicialização será var Linha = 1, a condição linha <= 3 e, por fim, o incremento linha++:
+//  teremos um for() dentro de outro, sendo que o primeiro é responsável por criar a primeira, segunda e terceira linhas. Já o for() que está inserido nele é responsável por repetir as colunas. Para cada linha criada pelo primeiro, o segundo imprimirá 10 colunas, criando assim 3 linhas com 10 asteriscos cada, como gostaríamos.
+
+    for(var linha = 1; linha <= 3; linha++) {
+
+// Para criarmos os 10 asteriscos utilizaremos um for(), em que há uma variável coluna que, enquanto for menor que 10, será incrementada como coluna++. Dentro do bloco for() inseriremos nosso document.write():
+
+        for(var coluna = 1; coluna <= 10; coluna++) {
+
+// Nosso objetivo é que, com um mostra() contendo apenas um asterisco, sejam impressas 3 linhas com 10 asteriscos em cada. Como o mostra pula uma linha automaticamente, utilizaremos em seu lugar o document.write():
+
+            document.write("*");
+        }
+        pulaLinha();
+    }
+
+</script>

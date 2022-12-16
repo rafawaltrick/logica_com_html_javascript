@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<script>
+
+function pulaLinha() {
+    document.write("<br><hr><br>");
+}
+
+
+function mostra(frase) {
+    document.write("<big>" + frase + "</big>");
+    pulaLinha();
+}
+
+
+
+// Nesse caso quando 7 multiplicar o multiplicador, que vale 1, vai corresponder a condição e vai ficar repetindo eternamente. 
+//Por isso acrescentamos o 'multiplicador = multiplicador + 1' para quando o código for lido, identificar que o multiplicador agora é 2 e sempre vai aumentando até atigir a condição. 
+
+//var multiplicador = 1;
+
+// while(multiplicador <= 10) {
+
+//     mostra(7 * multiplicador);
+//     multiplicador = multiplicador + 1;
+// }
+
+// temos outro repetidor. O 'for() { }'.
+// Com o for, nos ( ) são colocadas as 3 condições. A varável, a condição de repetição e o incremento da variável.
+// multiplicador = multiplicador + 1, pode ser trocado por multiplicador++.
+
+for(var multiplicador = 1; multiplicador <= 10; multiplicador++) {
+    mostra(7 * multiplicador)
+}
+
+mostra('FIM');
+
+</script>

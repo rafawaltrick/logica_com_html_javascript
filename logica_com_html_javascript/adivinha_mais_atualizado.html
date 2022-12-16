@@ -1,0 +1,59 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Tente Acertar o Número</button>
+
+<script>
+
+//  Precisaremos utilizar um novo tipo de dado, chamado array, inserindo os valores entre colchetes ([]):
+
+    var segredos = [5,7,10,2,3];
+
+    var input = document.querySelector("input");
+        input.focus();
+
+    function verifica() {
+
+
+//Para resolvermos isso, antes do for(), declararemos uma variável chamada achou, que recebe false:
+
+    var achou = false;
+
+//Temos que fazer uma repetição para testarmos todas as posições. Retornaremos ao código e, na função verifica(), criaremos um for(), lembrando que ele conta com três espaços:
+// No for(), declararemos uma variável chamada posicao, que inicialmente recebe o valor 0. A condição para repetição é que a posicao seja menor do que 4 e que, enquanto não atingir este limite, continue a se repetir. Por fim, a variável será incrementada, portanto utilizaremos posicao++:
+
+
+//Para não termos que alterar nosso for() todas as vezes que quisermos adicionar um novo elemento, poderemos utilizar o .length para termos sempre o array atual no for():
+
+    for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+        if(input.value == segredos[posicao]) {
+
+            alert("Você ACERTOU!");
+
+// Quando o número digitado corresponder a um dos elementos do array, declararemos achou = true:
+
+            achou = true;
+
+// Se acertarmos, não faz sentido continuarmos a verificação. Por isso, utilizaremos a função break:
+
+            break;
+        }
+    }
+
+// Com isso, informamos ao JavaScript que um dos números é compatível. Caso o número digitado não esteja presente em segredos, informaremos que if(achou == false), ou seja, se achou for false, deve ser exibido um aviso informando ao usuário que ele errou:
+
+    if(achou == false) {
+        alert("Você ERROU!");
+    }
+
+    input.value = "";
+    input.focus();
+
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+
+</script>

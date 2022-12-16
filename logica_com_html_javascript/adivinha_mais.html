@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<!- A palavra "input" vem do inglês, e sua tradução é "entrada". Em seguida, criaremos um botão, e a palavra em inglês para isso é "button", assim, vamos usá-la em nosso código: ->
+
+<input/>
+<button>Adivinhe o Número</button>
+
+<script>
+    var segredo = Math.round(Math.random() * 10);
+
+// Uma maneira de acessar estas tags do mundo HTML a partir do mundo JavaScript. Para isso, criaremos uma variável input:
+// Ela receberá a função document.querySelector() - atenção para o "S" maiúsculo. Utilizaremos a querySelector() para inserir aquilo que está no mundo HTML na variável input. Ela receberá como parâmetro o nome da tag que desejamos utilizar:
+
+    var input = document.querySelector("input");
+        input.focus();
+
+    function verifica() {
+
+// Para sabermos qual o valor que está inserido na variável, utilizaremos o input.value:
+
+        if(input.value == segredo) {
+
+        alert("Você ACERTOU!");
+        } else {
+
+        alert("Você ERROU!!!!!!!!");
+        }
+
+            input.value = "";
+            input.focus();
+
+    }
+
+    var button = document.querySelector("button");
+
+// Para associar ao botão a execução do verifica() utilizaremos o button.onclick(), em português, "on click" significa "no clicar", ou seja, queremos que a verificação seja feita ao clique:
+
+    button.onclick = verifica;
+
+</script>

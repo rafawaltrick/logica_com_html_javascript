@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+}
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+}
+
+var numeroPensado = Math.round(Math.random() * 10);
+
+// Como queremos dar 3 chances, o while() será executado sempre que algo for menor ou igual a este número, no caso, a quantidade de tentativas. Vamos criar a variável tentativas:
+var tentativas = 1;
+
+// Queremos repetir o bloco a cada chute do usuário. Para isso, criaremos um while():
+while(tentativas <= 3) {
+
+    var chute = parseInt(prompt("Digite seu chute!"));
+
+    if(chute == numeroPensado) {
+
+        mostra("Você ACERTOU, o número pensado era " + numeroPensado);
+
+// Nosso objetivo é que no caso de um acerto com uma ou duas tentativas ainda disponíveis, fazer com que o JavaScript saia do loop e, assim, pare de solicitar chutes. Para isso, podemos utilizar o comando break.
+        break;
+
+    } else {
+
+        mostra("Você ERROU!");
+    }
+
+// Enquanto o número de tentativas for menor ou igual a 3, o bloco while() será inteiramente executado. Para que o número de tentativas seja acumulado, precisaremos incrementar a variável tentativas:
+
+    tentativas++;
+}
+
+mostra("FIM");
+</script>

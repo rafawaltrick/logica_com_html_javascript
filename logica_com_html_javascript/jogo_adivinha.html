@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<script>
+
+function pulaLinha() {
+    document.write("<br><hr><br>");
+}
+
+
+function mostra(frase) {
+    document.write("<big>" + frase + "</big>");
+    pulaLinha();
+}
+
+// Na biblioteca 'Math.rondom()' gera um número aleatório sempre iniciando por 0,... então multiplicamos por '10' para andar uma casa decimal.
+// Usando 'Math.round()', o número gerado é sempre arredondado, gerando um número inteiro entre 0 e 10.
+
+var numeroPensado = Math.round(Math.random() * 10);
+
+// o comando 'console.log()' imprime no console do navagador o que for definido. Isso ajuda a fazer testes no seu código e descobrir onde ele está travando.
+
+console.log(numeroPensado);
+
+var chute = parseInt(prompt('Digite seu Chute! De 0 a 10.'));
+
+// Aqui a condição 'if()' vem acompanhada da condição 'else()'. (se chute for igual ao númeroPensado, vale essa condição se não(else) vale a outra).
+
+if(chute == numeroPensado) {
+    mostra('Você Acertou! :)');
+}
+else {
+    mostra('Você Errou :(, o número pensado foi ' + numeroPensado + ". Tente novamente!");
+}
+
+</script>

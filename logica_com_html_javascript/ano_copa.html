@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<script>
+
+function pulaLinha() {
+    document.write("<br><hr><br>");
+}
+
+
+function mostra(frase) {
+    document.write("<big>" + frase + "</big>");
+    pulaLinha();
+}
+
+var limite = parseInt(prompt('Digite a Data Limite: '));
+
+var anoCopa = 1930;
+
+// Co o comando 'while()' é feito um laço, um ciclo, se no lugar de 'anoCopa <= limite' tivesse 'True' ficaria repetindo os parametros eternamente.
+
+while(anoCopa <= limite) {
+    mostra('Teve copa em ' + anoCopa);
+    anoCopa = anoCopa + 4;
+}
+
+mostra(FIM);
+
+</script>

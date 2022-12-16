@@ -1,0 +1,46 @@
+<meta charset="UTF-8">
+
+<script>
+
+// Criada uma função para pular linha.
+// 'document.write()' é o comando usado para 'imprimir' HTML pelo Javascript. 
+
+function pulaLinha() {
+    document.write("<br><hr><br>");
+}
+
+// Criada uma função 'imprimir' sem precisar ficar escrevendo um comando grande toda vez.
+// 'frase' que está na função 'mostra()' será tudo que for escrito a cada vez que for usada essa função e lido dentro da função quando acionado 'frase'.
+
+function mostra(frase) {
+    document.write("<big>" + frase + "</big>");
+    pulaLinha();
+}
+
+// Criada as variáveis para interagir com o usuário.
+// O comando 'prompt()' permite que o usuario possa escrever pelo navegador. E esse comando retorna sempre uma 'string'.
+// Com o comando 'parseInt()', o que foi escrito no 'prompt()', é convertido em número e assim se torna possível concluir as contas feitas na variável 'pontos'.
+
+var vitorias = parseInt(prompt('Digite o Número de Vitórias do Seu Time: '));
+var empates =  parseInt(prompt('Digite o nùmero de Empates do Seu Time: '));
+var pontos = (vitorias * 3) + empates;
+
+// 'mostar()' é a função criada para 'imprimir'.
+
+mostra('Seu Time Tem, ' + pontos + ' Pontos no Campeonato.');
+
+// 'if()' são condições. (se pontos maior que 28) essa condição será válida ignorando as demais e se não, será usada a próxima condiçãe e assim por diante. 
+
+if(pontos > 28) {
+    mostra('Seu Time Foi Melhor que No Ano Passado!!!');
+}
+
+if(pontos == 28) {
+    mostra('Seu Time Foi Igual ao Ano Passado!');
+}
+
+if(pontos < 28) {
+    mostra('Seu time Foi Pior que o Ano Passado :(');
+}
+
+</script>
